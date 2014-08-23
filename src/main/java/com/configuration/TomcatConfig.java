@@ -17,19 +17,10 @@ import org.springframework.core.env.Environment;
 import com.main.Application;
 
 @Configuration
-@PropertySource("application.properties")
 public class TomcatConfig {
 	
 	private static final int PORT_NUMBER = 9000;
 	private static final int SESSION_TIMEOUT = 10;
-	
-	private static final Logger logger = LoggerFactory.getLogger(TomcatConfig.class);
-	
-	@Value("${foo}")
-	private static int port;
-	
-	@Autowired
-	static Environment env;
 	
 	@Bean
 	public EmbeddedServletContainerFactory servletContainer() {

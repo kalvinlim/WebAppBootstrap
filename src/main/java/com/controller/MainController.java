@@ -10,13 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
-	@Value("${foo}")
-	private int port;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		logger.info("{}", port);
 		return new ModelAndView("index");
 	}
 }
